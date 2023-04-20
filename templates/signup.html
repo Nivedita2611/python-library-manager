@@ -3,7 +3,7 @@
 
 {% block body %}
 <h1>Sign Up</h1>
-    <form>
+    <form method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <label for="email">Email:</label>
@@ -11,7 +11,7 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
+        <input type="password" id="confirm-password" name="cpassword" required>
         <input type="submit" value="Sign Up">
     </form>
 {% endblock %}
