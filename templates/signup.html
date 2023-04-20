@@ -1,6 +1,21 @@
 
+{% extends 'base.html' %}
 
-
+{% block body %}
+<h1>Sign Up</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <input type="submit" value="Sign Up">
+    </form>
+{% endblock %}
+{% block css %}
 <style>
     body {
         font-family: Arial, Helvetica, sans-serif;
@@ -49,25 +64,5 @@
         background-color: rgb(255, 265, 0);
     }
 </style>
-
-
-
-<body>
-    <h1>Sign Up</h1>
-    <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
-        <input type="submit" value="Sign Up">
-    </form>
-</body>
-</html>
-
-
-
-
+{% endblock %}
+{% block js %}{% endblock %}

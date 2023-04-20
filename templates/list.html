@@ -1,76 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>List Page</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			background-color: rgb(255, 79,99);
-		}
-		.container {
-			max-width: 960px;
-			margin: 0 auto;
-			padding: 40px;
-			background-color: rgb(238, 79 , 238);
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-		}
-		h1 {
-			font-size: 32px;
-			text-align: center;
-			margin-top: 0;
-			margin-bottom: 40px;
-		}
-		.row {
-			display: flex;
-			flex-wrap: wrap;
-			margin-bottom: 20px;
-		}
-		.col {
-			flex: 1;
-			margin: 10px;
-			padding: 20px;
-			background-color: #fff;
-			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-		}
-		.col h2 {
-			font-size: 24px;
-			margin-top: 0;
-			margin-bottom: 10px;
-		}
-		.col p {
-			font-size: 16px;
-			line-height: 1.5;
-			margin: 0;
-		}
-	</style>
-</head>
-<body>
-	<div class="container">
-		<h1>List of Items</h1>
-		<div class="row">
-			<div class="col">
-				<h2>Item 1</h2>
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+	
+</style>
+{% endblock %}
+{% block body %}
+<div class="container">
+	<div class="row">
+		<h1 class="center">List of Items</h1>
+		<div class="col-sm-3 p-3 ">
+			<div class="card shadow-lg bg-info">
+				<div class="card-body">
+					<h2>Item 1</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis magna in nibh volutpat, vitae vulputate arcu hendrerit. Sed vel turpis pharetra, eleifend nisi vel, lacinia dolor.</p>
-			</div>
-			<div class="col">
-				<h2>Item 2</h2>
-				<p>Phasellus mattis massa at magna vestibulum, vel pulvinar purus aliquet. Sed molestie, odio vel bibendum pharetra, dolor sapien ultricies arcu, ac bibendum massa mauris ut quam.</p>
-			</div>
-			<div class="col">
-				<h2>Item 3</h2>
-				<p>Vivamus placerat est sed felis interdum, vel sodales nulla interdum. Quisque imperdiet justo vel enim consequat, eget luctus massa eleifend.</p>
-			</div>
-			<div class="col">
-				<h2>Item 4</h2>
-				<p>Cras ac fermentum lectus. Morbi consequat, lacus sit amet suscipit lacinia, velit velit commodo tortor, nec aliquam nisl magna vel turpis.</p>
+				</div>
 			</div>
 		</div>
+		<div class="col-sm-3 p-3">
+			<div class="card shadow-lg">
+				<div class="card-body">
+					<h2>Item 1</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis magna in nibh volutpat, vitae vulputate arcu hendrerit. Sed vel turpis pharetra, eleifend nisi vel, lacinia dolor.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3 p-3">
+			<div class="card shadow-lg">
+				<div class="card-body">
+					<h2>Item 1</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis magna in nibh volutpat, vitae vulputate arcu hendrerit. Sed vel turpis pharetra, eleifend nisi vel, lacinia dolor.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3 p-3">
+			<div class="card shadow-lg">
+				<div class="card-body">
+					<h2>Item 1</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis magna in nibh volutpat, vitae vulputate arcu hendrerit. Sed vel turpis pharetra, eleifend nisi vel, lacinia dolor.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-3 p-3">
+			<div class="card shadow-lg">
+				<div class="card-body">
+					<h2>Item 1</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis magna in nibh volutpat, vitae vulputate arcu hendrerit. Sed vel turpis pharetra, eleifend nisi vel, lacinia dolor.</p>
+				</div>
+			</div>
+		</div>
+
 	</div>
-</body>
-</html>
+</div>
+{% endblock %}
+{% block js %}{% endblock %}
 
 
-
-
+		
+		
+		
+		
+		
+		
