@@ -6,6 +6,13 @@ app = Flask(__name__)
 def login():
     return render_template('login.html',title="login/registe")
 
+@app.route('/')
+def signup():
+    return render_template('signup.html',title="signup")
+
+@app.route('/')
+def search():
+    return render_template('search',title="search")
 
 @app.route('/signup')
 def signup():
