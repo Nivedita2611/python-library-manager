@@ -1,12 +1,23 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Update Password</title>
+  <title>Login</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <button id="openModal">Update Password</button>
+  <div class="login">
+    <h2>Login</h2>
+    <form>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <button type="submit">Login</button>
+    </form>
+    <a href="#" id="forgotPassword">Forgot Password?</a>
+  </div>
   
   <div id="modal" class="modal">
     <div class="modal-content">
@@ -30,5 +41,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
