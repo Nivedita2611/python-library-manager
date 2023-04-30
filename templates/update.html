@@ -1,22 +1,88 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Update Page</title>
+	<title>Python Library Update Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			font-size: 32px;
+			margin-bottom: 20px;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+		}
+
+		label {
+			margin-bottom: 5px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		input[type="text"], input[type="email"], input[type="password"] {
+			margin-bottom: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+		}
+
+		input[type="submit"] {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+			margin-top: 10px;
+			font-size: 16px;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #444;
+		}
+	</style>
 </head>
 <body>
-	<h1>Update Page</h1>
-	<form action="update.php" method="POST">
-		<label for="name">Name:</label>
-		<input type="text" id="name" name="name"><br>
+	<header>
+		<h1>Python Library Update Page</h1>
+	</header>
 
-		<label for="email">Email:</label>
-		<input type="email" id="email" name="email"><br>
+	<div class="container">
+		<form>
+			<label for="library-name">Library Name:</label>
+			<input type="text" id="library-name" name="library-name">
 
-		<label for="password">Password:</label>
-		<input type="password" id="password" name="password"><br>
+			<label for="version-number">Version Number:</label>
+			<input type="text" id="version-number" name="version-number">
 
-		<input type="submit" value="Update">
-	</form>
+			<label for="release-date">Release Date:</label>
+			<input type="text" id="release-date" name="release-date">
+
+			<label for="changelog">Changelog:</label>
+			<textarea id="changelog" name="changelog"></textarea>
+
+			<input type="submit" value="Update Library">
+		</form>
+	</div>
 </body>
 </html>
