@@ -1,7 +1,37 @@
 {% extends 'base.html' %}
 
-{% block body %}{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="table-responsive-lg">     
+                    <table class="table table-success">
+                        <thead>
+                            <tr>
+                                <th scope="col">Header</th>
+                                <th scope="col">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for key in info %}
+                            <tr class="">
+                                <td scope="row">{{key}}</td>
+                                <td scope="row">{{info[key] |safe}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>    
+            </div>
+        </div>
+</div>
+{% endblock %}
 
 {% block css %}{% endblock %}
 
-{% block js %}{% endblock %}
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+<script>
+
+</script>
+{% endblock %}

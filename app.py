@@ -5,6 +5,8 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import scoped_session
 from database import User
 
+from handler import *
+from librarymanager import *
 import re
 
 app = Flask(__name__)
@@ -95,8 +97,48 @@ def logout():
 
 @app.route('/library')
 def library_list():
-    
-    return render_template('list.html')
+    logfile = load_libs()
+    lib_info = []
+    with open(logfile,'r') as f:
+        data = f.read()
+        if data:
+            names = data.split('---')[-1].strip()
+            names = names.splitlines()
+            for name in names:
+                name, version = name.split('==')
+                lib_info.append({
+                    'name':name,
+                    'version':version
+                })
+        else:
+            names = []
+    return render_template('list.html',title='Library',names=lib_info)
+
+@app.route('/update/<path:library>',methods=['GET','POST'])
+def lib_update_lib(library):
+    if request.method == 'POST':
+        return_code = upgrade_lib(library)
+        if return_code == 0:
+            flash(f'{library} updated successfully','success')
+        else:
+            flash(f'failed to update {library}','danger')
+    return redirect('/library')
+
+@app.route('/uninstall/<path:library>',methods=['GET','POST'])
+def uninstall_lib(library):
+    if request.method == 'POST':
+        return_code = uninstall_lib(library)
+        if return_code == 0:
+            flash(f'{library} uninstalled successfully','success')
+        else:
+            flash(f'failed to uninstall {library}','danger')
+    return redirect('/library')
+
+
+@app.route('/view/<path:library>')
+def view(library):
+    info = get_library_info(library)
+    return render_template('view.html',title=library,info=info, library=library)
 
 @app.route('/search')
 def search():

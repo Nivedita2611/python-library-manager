@@ -9,47 +9,30 @@
 <div class="container">
 	<div class="row">
 		<h1 class="center">List of Items</h1>
-		<div class="col-sm-3 p-3 ">
-			<div class="card shadow-lg bg-info">
-				<div class="card-body">
-					<h2>Name</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis magna in nibh volutpat, vitae vulputate arcu hendrerit. Sed vel turpis pharetra, eleifend nisi vel, lacinia dolor.</p>
-				</div>
-			</div>
-		</div>
+		{% for library in names %}
 		<div class="col-sm-3 p-3">
 			<div class="card shadow-lg">
 				<div class="card-body">
-					<h2>Name</h2>
-				<p> .</p>
+					<h3 class="card-title">{{library.name}}</h3>
+					<p class="card-text">{{library.version}}</p>
+				</div>
+				<div class="card-footer">
+					<!-- actions -->
+					<a href="/view/{{library.name}}" class="btn btn">
+						<i class="fa fa-eye"></i>
+					</a>
+					<a href="/update/{{library.name}}" class="btn btn">
+						<i class="fa fa-edit"></i>
+					</a>
+					<a href="/uninstall/{{library.name}}" class="btn ">
+						<i class="fa fa-trash text-danger"></i>
+					</a>
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-3 p-3">
-			<div class="card shadow-lg">
-				<div class="card-body">
-					<h2>Item 1</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis magna in nibh volutpat, vitae vulputate arcu hendrerit. Sed vel turpis pharetra, eleifend nisi vel, lacinia dolor.</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-3 p-3">
-			<div class="card shadow-lg">
-				<div class="card-body">
-					<h2>Item 1</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis magna in nibh volutpat, vitae vulputate arcu hendrerit. Sed vel turpis pharetra, eleifend nisi vel, lacinia dolor.</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-3 p-3">
-			<div class="card shadow-lg">
-				<div class="card-body">
-					<h2>Item 1</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mollis magna in nibh volutpat, vitae vulputate arcu hendrerit. Sed vel turpis pharetra, eleifend nisi vel, lacinia dolor.</p>
-				</div>
-			</div>
-		</div>
-
+		
+		{% endfor %}
+		
 	</div>
 </div>
 {% endblock %}

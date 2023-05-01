@@ -15,4 +15,9 @@ def search_lib(lib_name):
     return_code = run_command(f"pip search {lib_name}")
     return return_code  
 
+def load_libs():
+    log = run_command("pip freeze")
+    # with open("libs.txt", "r") as file:
+    #     libs = file.read()
+    return log
 
