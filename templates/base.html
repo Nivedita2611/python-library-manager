@@ -36,25 +36,23 @@
             <a class="nav-link" href="/search">Search</a>
           </li>
         </li>   
-        </ul>
-        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-          {% if session['isauth'] %}
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="/">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/signup">Sign-Up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/update">update</a>
-          </li>
-        
-          
-          {% endif %}
+      </ul>
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+        {% if session['isauth'] %}
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="/">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup">Sign-Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/update">update</a>
+        </li>
+        {% endif %}
       </div>
     </div>
   </nav>

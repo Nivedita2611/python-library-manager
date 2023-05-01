@@ -44,5 +44,5 @@ def run_command(command):
 
 
 
-return_code = run_command("pip install scikit-learn")
-print(return_code)
+# return_code = run_command("pip install scikit-learn")
+# print(return_code)

@@ -95,6 +95,7 @@ def logout():
 
 @app.route('/library')
 def library_list():
+    
     return render_template('list.html')
 
 @app.route('/search')
