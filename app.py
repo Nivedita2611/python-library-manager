@@ -99,7 +99,13 @@ def library_list():
 
 @app.route('/search')
 def search():
-    return render_template('Search.html')
+    return render_template('search.html')
+
+@app.route('/update')
+def update():
+    return render_template('update.html')
+
+
 
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=8000, debug= True)
