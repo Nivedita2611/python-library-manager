@@ -105,11 +105,20 @@ def library_list():
             names = data.split('---')[-1].strip()
             names = names.splitlines()
             for name in names:
-                name, version = name.split('==')
-                lib_info.append({
-                    'name':name,
-                    'version':version
-                })
+                if '==' in name:
+                    name, version = name.split('==')
+                    lib_info.append({
+                        'name':name.strip(),
+                        'version':version.strip(),
+                        'source':'pip'
+                    })
+                elif '@' in name:
+                    name, version = name.split('@')
+                    lib_info.append({
+                        'name':name.strip(),
+                        'version':version.strip(),
+                        'source':'conda'
+                    })
         else:
             names = []
     return render_template('list.html',title='Library',names=lib_info)

@@ -1,98 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Search Page</title>
-  </head>
-  <body>
-    <header>
-      <!-- Header content here -->
-    </header>
-    <main>
-      <!-- Main content here -->
-    </main>
-    <footer>
-      <!-- Footer content here -->
-    </footer>
-  </body>
-</html>
-<main>
-    <form>
-      <label for="search-input">Search:</label>
-      <input type="text" id="search-input" name="search" placeholder="Enter your search terms">
-      <button type="submit">Search</button>
-    </form>
-  </main>
-  <head>
-    <title>Search Page</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-      }
-      
-      header {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-      }
-      
-      main {
-        width: 80%;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0px 0px 5px #ccc;
-      }
-      
-      form {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      label {
-        margin-right: 10px;
-      }
-      
-      input[type="text"] {
-        width: 100%;
-        max-width: 500px;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        font-size: 16px;
-      }
-      
-      button[type="submit"] {
-        padding: 10px 20px;
-        background-color: #333;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      
-      button[type="submit"]:hover {
-        background-color: #555;
-      }
-    </style>
-  </head>
+{% extends 'base.html' %}
 
-  <!DOCTYPE html>
-<html>
-  <head>
-    <script>
-      function http://127.0.0.1:8000/home() {
-        alert("");
-      }
-    </script>
-  </head>
-  <body>
-    <button onclick="sayHello()">Say Hello</button>
-  </body>
-</html>
+{% block body %}
+<form>
+  <label for="search-input">Search:</label>
+  <input type="text" id="search-input" name="search" placeholder="Enter your search terms">
+  <button type="submit">Search</button>
+</form>
+{% endblock %}
+{% block css %}{% endblock %}
+{% block js %}{% endblock %}
+
+ 
