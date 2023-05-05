@@ -149,8 +149,12 @@ def view(library):
     info = get_library_info(library)
     return render_template('view.html',title=library,info=info, library=library)
 
-@app.route('/search')
+@app.route('/search', methods=['GET','POST'])
 def search():
+    if request.method == 'POST':
+        query = request.form.get('query')
+        if not query:
+            pass
     return render_template('search.html')
 
 @app.route('/aboutus')
