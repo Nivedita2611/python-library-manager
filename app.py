@@ -153,9 +153,12 @@ def view(library):
 def search():
     return render_template('search.html')
 
-@app.route('/update')
-def update():
-    return render_template('update.html')
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
+
+
+
 
 
 
