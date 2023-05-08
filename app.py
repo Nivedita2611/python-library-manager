@@ -147,6 +147,17 @@ def uninstall_lib(library):
         #     flash(f'failed to uninstall {library}','danger')
     return redirect('/library')
 
+@app.route('/install/<path:library>',methods=['GET','POST'])
+def install_lib(library):
+    if request.method == 'POST':
+        # return_code = install_lib(library)
+        q.put(install_lib(library))
+        # if return_code == 0:
+        flash(f'{library} installed successfully','success')
+        # else:
+        #     flash(f'failed to uninstall {library}','danger')
+    return redirect('/library')
+
 
 @app.route('/view/<path:library>')
 def view(library):
@@ -158,6 +169,8 @@ def search():
     if request.method == 'POST':
         query = request.form.get('query')
         if not query:
+            flash('please enter a Library name','warning')
+        else:
             pass
     return render_template('search.html')
 

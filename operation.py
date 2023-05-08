@@ -57,20 +57,4 @@ def upgrade_lib(lib_name):
     return return_code
 
 def search_lib(lib_name):
-
-    # Define search parameters
-    search_term = 'numpy'
-    search_url = f'https://pypi.org/pypi/{search_term}/json'
-
-    # Send GET request and parse response as JSON
-    response = requests.get(search_url)
-    response_json = json.loads(response.text)
-
-    # Retrieve package metadata
-    name = response_json['info']['name']
-    version = response_json['info']['version']
-    summary = response_json['info']['summary']
-
-    details = [name , version, summary]
-    return details
-  
+    pass
