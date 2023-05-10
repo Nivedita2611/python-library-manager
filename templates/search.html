@@ -2,21 +2,95 @@
 
 {% block body %}
 
-<form>
-  <label for="search-input">Search:</label>
-  <input type="text" id="search-input" name="search" placeholder="Enter your search terms">
-  <button type="submit">Search</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search library </title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Search library</h1>
+	</header>
+	<main>
+		<form action="#" method="get">
+			<label for="search-box">Search:</label>
+			<input type="text" id="search-box" name="search" placeholder="Enter library name...">
+			<button type="submit">Search</button>
+		</form>
+	</main>
+</body>
+</html>
+
 {% endblock %}
 {% block css %}
 <style>
+body {
+	
+}
 
-  body{
-    background: #b5f2ee;
-  }
+header {
+	background-color: #005d9f;
+	color: #fff;
+	padding: 20px;
+}
+
+h1 {
+	margin: 0;
+}
+
+main {
+	margin: 50px auto;
+	width: 80%;
+	max-width: 600px;
+}
+
+form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+}
+
+label {
+	flex: 1;
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+input[type=text] {
+	flex: 2;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+button[type=submit] {
+	background-color: #005d9f;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-size: 16px;
+	margin-left: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button[type=submit]:hover {
+	background-color: #1f86c6;
+}
+
 </style>
 
+
 {% endblock %}
-{% block js %}{% endblock %}
+{% block js %}
+
+{% endblock %}
 
  
