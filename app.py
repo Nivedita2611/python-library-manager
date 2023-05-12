@@ -128,30 +128,21 @@ def library_list():
 
 @app.route('/update/<path:library>',methods=['GET','POST'])
 def lib_update_lib(library):
-    if request.method == 'POST':
-        return_code = upgrade_lib(library)
-        if return_code == 0:
-            flash(f'{library} updated successfully','success')
-        else:
-            flash(f'failed to update {library}','danger')
+    q.put(uplib(library))
+    flash(f'{library} updated successfully','success')
     return redirect('/library')
 
 @app.route('/uninstall/<path:library>',methods=['GET','POST'])
 def uninstall_lib(library):
-    if request.method == 'POST':
-        # return_code = uninstall_lib(library)
-        q.put(uninstall_lib(library))
-        # if return_code == 0:
-        flash(f'{library} uninstalled successfully','success')
-        # else:
-        #     flash(f'failed to uninstall {library}','danger')
+    q.put(unlib(library))
+    flash(f'{library} uninstalled successfully','success')
     return redirect('/library')
 
 @app.route('/install/<path:library>',methods=['GET','POST'])
 def install_lib(library):
     if request.method == 'POST':
         # return_code = install_lib(library)
-        q.put(install_lib(library))
+        q.put(inlib(library))
         # if return_code == 0:
         flash(f'{library} installed successfully','success')
         # else:
@@ -171,7 +162,9 @@ def search():
         if not query:
             flash('please enter a Library name','warning')
         else:
-            pass
+            search_result = search_lib(query)
+
+            return render_template('search.html',title='search',result=search_result)
     return render_template('search.html')
 
 @app.route('/aboutus')
@@ -195,7 +188,7 @@ if __name__ == '__main__':
     q = Queue()
     t = Thread(target=worker)
     t.start()
-    app.run(host='0.0.0.0', port=8000, debug= True)
+    app.run(host='0.0.0.0', port=8000)
     q.join()
     q.put(None)
     t.join()

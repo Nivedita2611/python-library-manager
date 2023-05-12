@@ -1,19 +1,35 @@
 from librarymanager import run_command
-def install_lib(lib_name):
+import requests
+import json
+def inlib(lib_name):
     return_code = run_command(f"pip install {lib_name}")
     return return_code
 
-def uninstall_lib(lib_name):
+def unlib(lib_name):
     return_code = run_command(f"pip uninstall {lib_name} -y")
     return return_code
 
-def upgrade_lib(lib_name):
+def uplib(lib_name):
     return_code = run_command(f"pip install {lib_name} --upgrade")
     return return_code
 
 def search_lib(lib_name):
-    return_code = run_command(f"pip search {lib_name}")
-    return return_code  
+
+    # Define search parameters
+    search_term = lib_name
+    search_url = f'https://pypi.org/pypi/{search_term}/json'
+
+    # Send GET request and parse response as JSON
+    response = requests.get(search_url)
+    response_json = json.loads(response.text)
+
+    # Retrieve package metadata
+    name = response_json['info']['name']
+    version = response_json['info']['version']
+    summary = response_json['info']['summary']
+
+    details = [name , version, summary]
+    return details
 
 def load_libs():
     log = run_command("pip freeze")
