@@ -128,18 +128,13 @@ def library_list():
 
 @app.route('/update/<path:library>',methods=['GET','POST'])
 def lib_update_lib(library):
-    return_code = uplib(library)
-    if return_code == 0:
-        flash(f'{library} updated successfully','success')
-    else:
-        flash(f'failed to update {library}','danger')
+    q.put(uplib(library))
+    flash(f'{library} updated successfully','success')
     return redirect('/library')
 
 @app.route('/uninstall/<path:library>',methods=['GET','POST'])
 def uninstall_lib(library):
-    
     q.put(unlib(library))
-
     flash(f'{library} uninstalled successfully','success')
     return redirect('/library')
 
@@ -191,7 +186,7 @@ if __name__ == '__main__':
     q = Queue()
     t = Thread(target=worker)
     t.start()
-    app.run(host='0.0.0.0', port=8000, debug= True)
+    app.run(host='0.0.0.0', port=8000)
     q.join()
     q.put(None)
     t.join()
