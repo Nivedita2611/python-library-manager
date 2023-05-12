@@ -1,4 +1,4 @@
-2023-05-12 15:43:15.084401| success |
+2023-05-12 16:02:25.177397| success |
 ---
 asttokens==2.2.1
 async-timeout==4.0.2
@@ -45,7 +45,6 @@ jupyter_client==8.0.3
 jupyter_core==5.2.0
 keras==2.12.0
 kiwisolver==1.4.4
-lxml==4.9.2
 markdown-it-py==2.2.0
 MarkupSafe==2.1.2
 matplotlib==3.7.1

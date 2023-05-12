@@ -162,7 +162,9 @@ def search():
         if not query:
             flash('please enter a Library name','warning')
         else:
-            pass
+            search_result = search_lib(query)
+
+            return render_template('search.html',title='search',result=search_result)
     return render_template('search.html')
 
 @app.route('/aboutus')

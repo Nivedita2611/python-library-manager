@@ -1,27 +1,28 @@
 {% extends 'base.html' %}
 
 {% block body %}
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Search library </title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<header>
-		<h1>Search library</h1>
-	</header>
-	<main>
-		<form action="#" method="get">
+		<form action="/search" method="post">
 			<label for="search-box">Search:</label>
-			<input type="text" id="search-box" name="search" placeholder="Enter library name...">
+			<input type="text" id="search-box" name="query" placeholder="Enter library name...">
 			<button type="submit">Search</button>
 		</form>
-	</main>
-</body>
-</html>
-
+		<div class="card my-3">
+			<div class="card-body">
+				<h4 class="card-title">Search Result</h4>
+			</div>
+			{% if result %}
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">{{result[0]}}</li>
+				<li class="list-group-item">{{result[1]}}</li>
+				<li class="list-group-item">{{result[2]}}</li>
+			</ul>
+			{% else %}
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">No Results found</li>
+				</ul>
+			{% endif %}
+			
+		</div>
 {% endblock %}
 {% block css %}
 <style>
