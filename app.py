@@ -4,7 +4,10 @@ from sqlalchemy import engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import scoped_session
 from database import User
-
+from queue import Queue
+import random
+from threading import Thread
+import time
 from handler import *
 from librarymanager import *
 import re
@@ -136,11 +139,23 @@ def lib_update_lib(library):
 @app.route('/uninstall/<path:library>',methods=['GET','POST'])
 def uninstall_lib(library):
     if request.method == 'POST':
-        return_code = uninstall_lib(library)
-        if return_code == 0:
-            flash(f'{library} uninstalled successfully','success')
-        else:
-            flash(f'failed to uninstall {library}','danger')
+        # return_code = uninstall_lib(library)
+        q.put(uninstall_lib(library))
+        # if return_code == 0:
+        flash(f'{library} uninstalled successfully','success')
+        # else:
+        #     flash(f'failed to uninstall {library}','danger')
+    return redirect('/library')
+
+@app.route('/install/<path:library>',methods=['GET','POST'])
+def install_lib(library):
+    if request.method == 'POST':
+        # return_code = install_lib(library)
+        q.put(install_lib(library))
+        # if return_code == 0:
+        flash(f'{library} installed successfully','success')
+        # else:
+        #     flash(f'failed to uninstall {library}','danger')
     return redirect('/library')
 
 
@@ -154,6 +169,8 @@ def search():
     if request.method == 'POST':
         query = request.form.get('query')
         if not query:
+            flash('please enter a Library name','warning')
+        else:
             pass
     return render_template('search.html')
 
@@ -162,11 +179,24 @@ def aboutus():
     return render_template('aboutus.html')
 
 
-
+def worker():
+    while True:
+        item = q.get()
+        print(item)
+        if item is None:
+            break
+        print('Processing %s' % item)  # do the work e.g. update database
+        time.sleep(1)
+        q.task_done()
 
 
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=8000, debug= True)
-
+    q = Queue()
+    t = Thread(target=worker)
+    t.start()
+    app.run(host='0.0.0.0', port=8000, debug= True)
+    q.join()
+    q.put(None)
+    t.join()
 
