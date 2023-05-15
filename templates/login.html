@@ -2,80 +2,85 @@
 
 {% block css %}
 <style>
-    body {
-      background-image: url('/static/images/lck_image.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
+  body {
+    background-image: url('/static/images/lck_image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  h1 {
+background-color: #fff; 
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 30px;
     }
-    .login-container {
-      background-color: #fff;
+
+  .login-container {
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       margin: 50px ;
-      max-width: 400px;
-      padding: 20px;
+  max-width: 400px;
+   padding: 20px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.5);
+    
+
+  }
+  
+  label {
+    background:transparent;
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
     }
-    h1 {
-      color: #333;
-      font-size: 28px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    label {
-      color: #666;
-      display: block;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    input[type="text"],
-    input[type="password"] {
-      border-radius: 5px;
-      border: none;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      font-size: 16px;
-      margin-bottom: 20px;
-      padding: 10px;
-      width: 100%;
-    }
-    input[type="submit"] {
-      background-color: #333;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-      cursor: pointer;
-      font-size: 16px;
-      padding: 10px;
-      transition: background-color 0.3s ease;
-      width: 100%;
-    }
-    input[type="submit"]:hover {
-      background-color: #555;
-    }
-    .error-message {
-      color: red;
-      font-size: 14px;
-      margin-top: 10px;
-      text-align: center;
-    }
-  </style>
+  input[type="text"],
+  input[type="password"] {
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 5px rgba(245, 243, 243, 0.2);
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+  }
+  input[type="submit"] {
+    background-color: rgb(255,165,0);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  input[type="submit"]:hover {
+    background-color: rgb(255, 265, 0);
+  }
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 5px;
+   
+  }
+</style>
 {% endblock %}
 
 {% block body %}
 
 <div class="login-container">
-    <h1>Login</h1>
-    <form method="POST">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
+  <h1>Login</h1>
+ <form method="POST">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <input type="submit" value="Login">
+  </form>
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+  <div class="error-message">Please enter a valid username and password.</div>
+</div>
 
-      <input type="submit" value="Login">
-    </form>
-
-    <div class="error-message">Please enter a valid username and password.</div>
-  </div>
 {% endblock %}
 
 {% block js %}
