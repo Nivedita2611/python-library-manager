@@ -23,19 +23,17 @@
 			{% endif %}
 			
 		</div>
+		<div class="">
+			<a href="/"><button type="install">install</button></a>
+		</div>
 {% endblock %}
 {% block css %}
 <style>
 body {
-	
+      background-image: url('/static/images/home screen.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
 }
-
-header {
-	background-color: #005d9f;
-	color: #fff;
-	padding: 20px;
-}
-
 h1 {
 	margin: 0;
 }
@@ -51,8 +49,8 @@ form {
 	flex-wrap: wrap;
 	align-items: center;
 	padding: 20px;
-	background-color: #fff;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	background-color: rgb(253, 255, 255);
+	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 	border-radius: 5px;
 }
 
@@ -72,7 +70,8 @@ input[type=text] {
 
 button[type=submit] {
 	background-color: #005d9f;
-	color: #fff;
+	color: aliceblue;
+	
 	border: none;
 	border-radius: 5px;
 	padding: 10px 20px;
@@ -85,13 +84,25 @@ button[type=submit] {
 button[type=submit]:hover {
 	background-color: #1f86c6;
 }
+button[type=install] {
+	background-color: #005d9f;
+	color: aliceblue;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 20px;
+	font-size: 16px;
+	margin-left: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+button[type=install]:hover {
+	background-color: #1f86c6;
+
+}
+
 
 </style>
 
-
 {% endblock %}
-{% block js %}
-
-{% endblock %}
-
- 
+{% block js %}  {% endblock %}

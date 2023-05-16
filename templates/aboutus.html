@@ -1,91 +1,56 @@
 {% extends 'base.html' %}
 
 {% block body %}
-
-
-
-
-<!DOCTYPE html>
-<html>
-  
     <header>
       <h1>About our Team</h1>
       
     </header>
     <main>
       <section>
-        <h2>Nivedita Singh</h2>
+        <div class="container" >
+          <h2>Nivedita singh Singh</h2>
         <p>Backend coder of this project.</p>
         <p>BCA student at Babu Banarasi Das University</p>
+      </div>
       </section>
-      <section>
+  <section>
+    <div class="container" mt-3 >
         <h2>Prashansha Singh</h2>
         <p>Frontend coder of this project.</p>
         <p>BCA student at Babu Banarasi Das University</p>
       
         <p></p>
+        </div>
       </section>
      
         </body>
-</html>
+
 {% endblock %}
 
 
 {% block css %}
 <style>
-* {
-    box-sizing: border-box;
-  }
-  
   body {
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-    background-color: #b2c8eb;
+    background-image: url('/static/images/view li.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-  
-  header {
-    background-color: #556196;
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-  }
-  
-  nav li {
-    margin-left: 85px;
-    
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-  
-  section {
-    margin-bottom: 60px;
-  }
-  
-  h2 {
-    color: #0a0a0a;
-  }
-  
-  
-  
-</style>
+
+ 
+
+
+  h1 {
+        text-align: center;
+          }
+
+      .container {
+        background-color: #f2f2f2;
+        padding: 10px;
+        margin: 20px;
+       
+      }
+    </style>
+
 
 {% endblock %}
 
