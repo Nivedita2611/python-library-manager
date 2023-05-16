@@ -1,68 +1,143 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<div class="container mt-3">
-  <form class="d-flex text-center" method="post" action="/search">
-    <div class="col">
-      <div class="mb-3 input-group">
-        <input type="search" name="query" id="query" class="form-control form-control-lg" placeholder="library name here" aria-describedby="search_help_id">
-        <button class="btn btn-outline-secondary">Search libraries</button>
-      </div>
-      
-        <h2>About 'PYTHON LIBRARY MANAGER'</h2>
-      
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Professional Website</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+   
+        <h1>Welcome to Python Library Manager</h1>
+       
         <p>Python library Manager is an all-in-one solution for managing Python libraries on your system. With a sleek and intuitive GUI, Python library Manager makes it easy to install, update, and remove Python libraries, view their dependencies, and access their documentation. You customize PyLib Manager's settings to your liking, including language preferences and notification settings.
-          Whether you're a developer, data scientist, or just a Python enthusiast, Python library Manager is the ultimate tool for managing your Python libraries with ease and efficiency.
-          </p>
-        </div>
+            Whether you're a developer, data scientist, or just a Python enthusiast, Python library Manager is the ultimate tool for managing your Python libraries with ease and efficiency.
+            </p>
 
+      </div>
+      <div class="btn-group">  
       
+        <a href="/library"><button type="button" class="btn btn-outline-primary">install</button></a>
+        <a href="/library"><button type="button" class="btn btn-outline-primary">uninstall</button></a>
+        <a href="/library"><button type="button" class="btn btn-outline-primary">Update</button></a>
     </div>
+  </header>
 
-    <div class="btn-group">  
-      
-  <a href="/library"><button type="button" class="btn btn-outline-primary">install</button></a>
-  <a href="/library"><button type="button" class="btn btn-outline-primary">uninstall</button></a>
-  <a href="/library"><button type="button" class="btn btn-outline-primary">Update</button></a>
+  <section>
+  
+        <h2>ABOUT US </h2>
 
-</div>    
-</div>    
-</div>
-</div>
-  </form>
-</div>
+        <h3>Nivedita singh </h3>
+        <p>Backend coder of this project.</p>
+        <p>BCA student at Babu Banarasi Das University</p>
+
+        <div class="container" mt-3 >
+            <h4>Prashansha Singh</h4>
+            <p>Frontend coder of this project.</p>
+            <p>BCA student at Babu Banarasi Das University</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Thank You For Visiting Our Site </p>
+    </div>
+  </footer>
+</body>
+</html>
+
 
 {% endblock %}
 {% block css %}
   <style>
   body {
-    background-image: url('/static/images/home tv.jpg');
+    background-image: url('/static/images/42.jpg');
       background-repeat: no-repeat;
         background-size: cover;
     }
-  
-{
-        font-family: Arial, Helvetica, sans-serif;
-       
-    }
-    h2 {
-        text-align: center;
-        margin-top: 100px;
-        margin-bottom: 50px;
-    }
-    form {
-        width: 900px;
-        margin: 0 auto;
-        background-color: rgb(219, 209, 219);
-        padding: 50px;
-        border-radius: 20px;
-        box-shadow: 0px 0px 10px #888888;
-    }
-    label {
-        display: block;
-        margin-bottom: 50px;
-        font-weight: bold;
-    }
+/* Reset default browser styles */
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+nav {
+  background-color: #333;
+  color: #fff;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+header {
+  background-color:rgba(245, 113, 240, 0);
+  margin: 0 auto 98;
+}
+
+.hero {
+  padding: 0 auto ;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 0 auto ;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0 auto;
+}
+
+
   </style>
 
 {% endblock %}

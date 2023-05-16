@@ -1,107 +1,109 @@
 {% extends 'base.html' %}
 
 {% block body %}
-		<form action="/search" method="post">
-			<label for="search-box">Search:</label>
-			<input type="text" id="search-box" name="query" placeholder="Enter library name...">
-			<button type="submit">Search</button>
-		</form>
-		<div class="card my-3">
-			<div class="card-body">
-				<h4 class="card-title">Search Result</h4>
-			</div>
-			{% if result %}
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item">{{result[0]}}</li>
-				<li class="list-group-item">{{result[1]}}</li>
-				<li class="list-group-item">{{result[2]}}</li>
-			</ul>
-			{% else %}
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item">No Results found</li>
-				</ul>
-			{% endif %}
-			
+<form action="/search" method="post">
+	<label for="search-box">Search:</label>
+	<input type="text" id="search-box" name="query" placeholder="Enter library name...">
+	<button type="submit">Search</button>
+</form>
+<div class="card my-3">
+	<div class="card-body">
+		<h4 class="card-title">Search Result</h4>
+	</div>
+	{% if result %}
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">{{result[0]}}</li>
+		<li class="list-group-item">{{result[1]}}</li>
+		<li class="list-group-item">{{result[2]}}</li>
+	</ul>
+	<form action="/install/{{result[0]}}" method="post">
+		<div class="d-grid gap-2">
+		  <button class="btn btn-primary">Install Library</button>
 		</div>
-		<div class="">
-			<a href="/"><button type="install">install</button></a>
-		</div>
+	</form>
+	{% else %}
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">No Results found</li>
+	</ul>
+	{% endif %}
+	
+</div>
 {% endblock %}
 {% block css %}
 <style>
-body {
-      background-image: url('/static/images/home screen.webp');
-      background-repeat: no-repeat;
-      background-size: cover;
-}
-h1 {
-	margin: 0;
-}
-
-main {
-	margin: 50px auto;
-	width: 80%;
-	max-width: 600px;
-}
-
-form {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	padding: 20px;
-	background-color: rgb(253, 255, 255);
-	text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-	border-radius: 5px;
-}
-
-label {
-	flex: 1;
-	margin-right: 10px;
-	font-weight: bold;
-}
-
-input[type=text] {
-	flex: 2;
-	padding: 10px;
-	border: none;
-	border-radius: 5px;
-	font-size: 16px;
-}
-
-button[type=submit] {
-	background-color: #005d9f;
-	color: aliceblue;
+	body {
+		background-image: url('/static/images/99.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	h1 {
+		margin: 0;
+	}
 	
-	border: none;
-	border-radius: 5px;
-	padding: 10px 20px;
-	font-size: 16px;
-	margin-left: 10px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-button[type=submit]:hover {
-	background-color: #1f86c6;
-}
-button[type=install] {
-	background-color: #005d9f;
-	color: aliceblue;
-	text-align: center;
-	border: none;
-	border-radius: 5px;
-	padding: 10px 20px;
-	font-size: 16px;
-	margin-left: 10px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-button[type=install]:hover {
-	background-color: #1f86c6;
-
-}
-
-
+	main {
+		margin: 50px auto;
+		width: 80%;
+		max-width: 600px;
+	}
+	
+	form {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		padding: 20px;
+		background-color: rgb(253, 255, 255);
+		text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+		border-radius: 5px;
+	}
+	
+	label {
+		flex: 1;
+		margin-right: 10px;
+		font-weight: bold;
+	}
+	
+	input[type=text] {
+		flex: 2;
+		padding: 10px;
+		border: none;
+		border-radius: 5px;
+		font-size: 16px;
+	}
+	
+	button[type=submit] {
+		background-color: #005d9f;
+		color: aliceblue;
+		
+		border: none;
+		border-radius: 5px;
+		padding: 10px 20px;
+		font-size: 16px;
+		margin-left: 10px;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+	
+	button[type=submit]:hover {
+		background-color: #1f86c6;
+	}
+	button[type=install] {
+		background-color: #005d9f;
+		color: aliceblue;
+		text-align: center;
+		border: none;
+		border-radius: 5px;
+		padding: 10px 20px;
+		font-size: 16px;
+		margin-left: 10px;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+	button[type=install]:hover {
+		background-color: #1f86c6;
+		
+	}
+	
+	
 </style>
 
 {% endblock %}
